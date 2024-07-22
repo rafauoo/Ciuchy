@@ -7,8 +7,8 @@
   
   <script>
   import axios from 'axios';
-  import ClothesCarousel from './components/ClothesCarousel.vue';
-  import ActionsList from './components/ActionsList.vue';
+  import ClothesCarousel from './ClothesCarousel.vue';
+  import ActionsList from './ActionsList.vue';
   
   export default {
     name: 'Home',
