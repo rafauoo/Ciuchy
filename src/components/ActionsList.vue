@@ -27,7 +27,7 @@ export default {
   },
   methods: {
     fetchActions() {
-      axios.get('http:///20.160.76.93:8000/actions/')
+      axios.get('http://20.160.76.93:8000/actions/')
         .then(response => {
           this.actions = response.data;
         })
@@ -42,6 +42,7 @@ export default {
   }
 };
 </script>
+
 
 <style>
 .actions-list {
