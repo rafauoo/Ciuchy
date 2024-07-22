@@ -93,7 +93,7 @@
   .nav-button {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-50%) scale(2);
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     border: none;
