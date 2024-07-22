@@ -1,10 +1,5 @@
 <template>
   <div id="app">
-    <h1>Welcome to the Clothing App</h1>
-    <nav>
-      <router-link to="/">Home</router-link>
-      <router-link to="/upload">Upload Clothing</router-link>
-    </nav>
     <router-view /> <!-- This is where routed components are displayed -->
   </div>
 </template>
