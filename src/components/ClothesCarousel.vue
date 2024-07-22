@@ -30,7 +30,7 @@
     },
     methods: {
       fetchClothes() {
-        axios.get('http://localhost:8000/ciuchy/')
+        axios.get('http:///20.160.76.93:8000/ciuchy')
           .then(response => {
             this.clothes = response.data;
           })
