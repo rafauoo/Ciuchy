@@ -1,45 +1,32 @@
 <template>
   <div id="app">
-    <ClothesCarousel ref="clothesCarousel" @clothing-changed="handleClothingChange"/>
-    <ActionsList ref="actionsList" @action-selected="updateClothingAction" />
+    <h1>Welcome to the Clothing App</h1>
+    <nav>
+      <router-link to="/">Home</router-link>
+      <router-link to="/upload">Upload Clothing</router-link>
+    </nav>
+    <router-view /> <!-- This is where routed components are displayed -->
   </div>
 </template>
 
 <script>
-import axios from 'axios';
-import ClothesCarousel from './components/ClothesCarousel.vue';
-import ActionsList from './components/ActionsList.vue';
-
 export default {
-  name: 'App',
-  components: {
-    ClothesCarousel,
-    ActionsList
-  },
-  methods: {
-    handleClothingChange(action) {
-      this.$refs.actionsList.selectedAction = action;
-    },
-    updateClothingAction(action) {
-      const selectedClothing = this.$refs.clothesCarousel.clothes[this.$refs.clothesCarousel.currentIndex];
-      if (selectedClothing) {
-        axios.put(`http://20.160.76.93:8000/ciuchy/${selectedClothing.id}/action`, { action: action })
-          .then(response => {
-            this.$refs.clothesCarousel.clothes[this.$refs.clothesCarousel.currentIndex].action = action;
-            this.handleClothingChange(action);
-          })
-          .catch(error => {
-            console.error('Error updating clothing action:', error);
-          });
-      }
-    }
-  }
+  name: 'App'
 };
 </script>
-
 
 <style>
 #app {
   text-align: center;
+  margin-top: 20px;
+}
+
+nav {
+  margin-bottom: 20px;
+}
+
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
 }
 </style>
