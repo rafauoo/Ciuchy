@@ -3,7 +3,7 @@
       <button @click="prev" class="nav-button prev">‹</button>
       <div class="carousel">
         <div v-if="clothes.length > 0" class="carousel-item">
-          <img :src="`http:///20.160.76.93:8000/${clothes[currentIndex].img}`" :alt="'Clothing ' + clothes[currentIndex].id" />
+          <img :src="`http://20.160.76.93:8000/${clothes[currentIndex].img}`" :alt="'Clothing ' + clothes[currentIndex].id" />
           <div>{{ clothes[currentIndex].action }}</div>
         </div>
         <div v-else class="carousel-item">
